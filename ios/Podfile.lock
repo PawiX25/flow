@@ -14,6 +14,8 @@ PODS:
     - Flutter
   - permission_handler_apple (9.3.0):
     - Flutter
+  - super_keyboard (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - file_saver (from `.symlinks/plugins/file_saver/ios`)
@@ -23,6 +25,7 @@ DEPENDENCIES:
   - objectbox_flutter_libs (from `.symlinks/plugins/objectbox_flutter_libs/ios`)
   - open_app_file (from `.symlinks/plugins/open_app_file/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - super_keyboard (from `.symlinks/plugins/super_keyboard/ios`)
 
 SPEC REPOS:
   trunk:
@@ -43,6 +46,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/open_app_file/ios"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
+  super_keyboard:
+    :path: ".symlinks/plugins/super_keyboard/ios"
 
 SPEC CHECKSUMS:
   file_saver: 6cdbcddd690cb02b0c1a0c225b37cd805c2bf8b6
@@ -53,6 +58,7 @@ SPEC CHECKSUMS:
   objectbox_flutter_libs: 4d609454f39d002fc850b3019e180fc4760cdf36
   open_app_file: ba67d2bf6cdddfb654b13b713d66bea4974a5adb
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
+  super_keyboard: 016de6ce9ab826f9a0b185608209d6a3b556d577
 
 PODFILE CHECKSUM: 1ac52b241a59f6195eb0dcd62320a80726757816
 

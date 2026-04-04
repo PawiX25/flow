@@ -1,10 +1,6 @@
-import "package:flow/utils/extensions/quill_theme.dart";
-import "package:flow/utils/flutter_quill/divider_embed_builder.dart";
 import "package:flow/widgets/general/frame.dart";
 import "package:flutter/material.dart";
-import "package:flutter_quill/flutter_quill.dart";
-import "package:markdown/markdown.dart" as md;
-import "package:markdown_quill/markdown_quill.dart";
+import "package:super_editor/super_editor.dart";
 
 class MarkdownView extends StatefulWidget {
   final String? markdown;
@@ -24,43 +20,52 @@ class MarkdownView extends StatefulWidget {
 }
 
 class _MarkdownViewState extends State<MarkdownView> {
-  final ScrollController scrollController = ScrollController();
-  final FocusNode focusNode = FocusNode();
-  late final QuillController quillController;
+  late final MutableDocument _document;
+  late final MutableDocumentComposer _composer;
+  late final Editor _editor;
 
   @override
   void initState() {
     super.initState();
-    quillController = QuillController.basic(
-      config: QuillControllerConfig(
-        clipboardConfig: QuillClipboardConfig(enableExternalRichPaste: false),
-      ),
-    );
-    final bool hasInitialValue =
+
+    final bool hasContent =
         widget.markdown != null && widget.markdown!.trim().isNotEmpty;
 
-    quillController.document = hasInitialValue
-        ? Document.fromDelta(
-            MarkdownToDelta(
-              markdownDocument: md.Document(encodeHtml: false),
-            ).convert(widget.markdown!),
+    _document = hasContent
+        ? deserializeMarkdownToDocument(
+            widget.markdown!,
+            syntax: MarkdownSyntax.normal,
+            encodeHtml: false,
           )
-        : Document();
-    quillController.readOnly = true;
+        : MutableDocument(
+            nodes: [
+              ParagraphNode(
+                id: Editor.createNodeId(),
+                text: AttributedText(),
+              ),
+            ],
+          );
+
+    _composer = MutableDocumentComposer();
+    _editor = createDefaultDocumentEditor(
+      document: _document,
+      composer: _composer,
+    );
+  }
+
+  @override
+  void dispose() {
+    _composer.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
       child: Frame(
-        child: QuillEditor(
-          focusNode: focusNode,
-          scrollController: scrollController,
-          controller: quillController,
-          config: QuillEditorConfig(
-            customStyles: context.quillDefaultStyles,
-            embedBuilders: [DividerEmbedBuilder()],
-          ),
+        child: SuperReader(
+          editor: _editor,
+          shrinkWrap: true,
         ),
       ),
     );

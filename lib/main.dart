@@ -51,7 +51,6 @@ import "package:flutter/material.dart";
 import "package:flutter/scheduler.dart";
 import "package:flutter/services.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
-import "package:flutter_quill/flutter_quill.dart";
 import "package:intl/intl.dart";
 import "package:logging/logging.dart";
 import "package:logging_appenders/logging_appenders.dart";
@@ -271,7 +270,6 @@ class FlowState extends State<Flow> {
           GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         FlowLocalizations.delegate,
-        FlutterQuillLocalizations.delegate,
       ],
       supportedLocales: FlowLocalizations.supportedLocales,
       locale: _locale,
