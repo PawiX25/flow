@@ -1233,10 +1233,11 @@ packages:
   moment_dart:
     dependency: "direct main"
     description:
-      name: moment_dart
-      sha256: c868448a4813e57d07a2a236ea010a4960311895b1166aeaf7a8e0750c2cb0dd
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: "feature/add-polish-locale"
+      resolved-ref: "817fbc7113d9f8c164af8acd9bdc27e9137af0ef"
+      url: "https://github.com/PawiX25/moment_dart.git"
+    source: git
     version: "5.3.1"
   native_toolchain_c:
     dependency: transitive

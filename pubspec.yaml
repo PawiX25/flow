@@ -123,3 +123,9 @@ flutter:
 
 objectbox:
     output_dir: objectbox
+
+dependency_overrides:
+    moment_dart:
+        git:
+            url: https://github.com/PawiX25/moment_dart.git
+            ref: feature/add-polish-locale
