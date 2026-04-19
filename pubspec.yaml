@@ -127,5 +127,5 @@ objectbox:
 dependency_overrides:
     moment_dart:
         git:
-            url: https://github.com/PawiX25/moment_dart.git
-            ref: feature/add-polish-locale
+            url: https://github.com/sadespresso/moment_dart.git
+            ref: master

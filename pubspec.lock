@@ -1234,11 +1234,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "feature/add-polish-locale"
-      resolved-ref: "817fbc7113d9f8c164af8acd9bdc27e9137af0ef"
-      url: "https://github.com/PawiX25/moment_dart.git"
+      ref: master
+      resolved-ref: d59a5db7f48123ea3f5a7194d639e3b66bcfa589
+      url: "https://github.com/sadespresso/moment_dart.git"
     source: git
-    version: "5.3.1"
+    version: "5.3.2"
   native_toolchain_c:
     dependency: transitive
     description:
